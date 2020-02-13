@@ -7,6 +7,8 @@ gem 'better_errors'
 gem 'awesome_print'
 gem 'faker'
 gem 'hirb'
+gem 'json'
+gem 'activerecord-import'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
