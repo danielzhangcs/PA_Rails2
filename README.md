@@ -1,24 +1,14 @@
 # README
+This is COSI 166b PA Rails 1 assignment repository.
+* Assignment Page - [PA Rails 1](http://cosi166b.s3-website-us-west-2.amazonaws.com/content/topics/pa/pa_rails_1.md/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Part 1: Bootstrap UI, Import JSON files and Display data
 
-Things you may want to cover:
+Author  **Daniel Zhang**  
 
-* Ruby version
+Heroku app link:  https://cryptic-bastion-00964.herokuapp.com 
+Private BitBucket repo: https://github.com/danielzhangcs/PA_Rails 
 
-* System dependencies
+## Home Page:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Show all courses, instructors, and subjects
