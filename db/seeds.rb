@@ -10,12 +10,16 @@ courseJson = JSON.parse(File.open("./db/pa_rails_json/course.json").read)
 subjectJson = JSON.parse(File.open("./db/pa_rails_json/subject.json").read)
 instructorJson = JSON.parse(File.open("./db/pa_rails_json/instructor.json").read)
 
+courses = []
+instructors = []
+subjects = []
+
 Course.delete_all
 Instructor.delete_all
 Subject.delete_all
 
 courseJson.each do |course|
-    Course.create(
+    courses<<Course.new(
         code: course["code"],
         description: course["description"],
         name: course["name"],
@@ -24,7 +28,7 @@ courseJson.each do |course|
 end
 
 instructorJson.each do |instructor|
-    Instructor.create(
+    instructors<<Instructor.new(
         first: instructor["first"],
         middle: instructor["middle"],
         last: instructor["last"],
@@ -35,12 +39,15 @@ instructorJson.each do |instructor|
 end
 
 subjectJson.each do |subject|
-    Subject.create(
+    subjects<<Subject.new(
         abbreviation: subject["abbreviation"],
         id: subject["id"],
         name: subject["name"]
     )
 end
 
+Course.import courses
+Instructor.import instructors
+Subject.import subjects
 
 
