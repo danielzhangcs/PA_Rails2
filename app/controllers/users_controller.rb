@@ -1,16 +1,21 @@
 class UsersController < ApplicationController
+  include SessionsHelper
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:new, :create, :set_user, :user_params]
+
+
 
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   # GET /users/1
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @courses = @user.courses
   end
 
   # GET /users/new
@@ -26,8 +31,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
       if @user.save
+        log_in @user
         flash[:success] = "Welcome to the Course Registration App!"
         redirect_to user_url(@user)
       else

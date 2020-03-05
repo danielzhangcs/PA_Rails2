@@ -1,3 +1,4 @@
+<% provide(:title, "Home Page") %>
 <section class="py-5">
   <h2 class="text-center">Home Page</h2>
 
@@ -34,9 +35,9 @@
           <tbody>
           <% @courses.each do |course| %>
             <tr>
-              <td><%= course.code %></td>
-              <td><%= course.name %></td>
-              <td><%= course.description %></td>
+              <td class="text-center"><%= course.code %></td>
+              <td class="text-center"><%= course.name %></td>
+              <td class="text-center"><%= course.description %></td>
             </tr>
           <% end %>
           </tbody>
@@ -59,10 +60,10 @@
           <tbody>
           <% @instructors.each do |instructor| %>
             <tr>
-              <td><%= instructor.id %></td>
-              <td><%= instructor.first %></td>
-              <td><%= instructor.last %></td>
-              <td><%= instructor.email %></td>
+              <td class="text-center"><%= instructor.id %></td>
+              <td class="text-center"><%= instructor.first %></td>
+              <td class="text-center"><%= instructor.last %></td>
+              <td class="text-center"><%= instructor.email %></td>
             </tr>
           <% end %>
           </tbody>
@@ -84,9 +85,9 @@
           <tbody>
           <% @subjects.each do |subject| %>
             <tr>
-              <td><%= subject.id %></td>
-              <td><%= subject.name %></td>
-              <td><%= subject.abbreviation %></td>
+              <td class="text-center"><%= subject.id %></td>
+              <td class="text-center"><%= subject.name %></td>
+              <td class="text-center"><%= subject.abbreviation %></td>
             </tr>
           <% end %>
           </tbody>

@@ -13,6 +13,7 @@ instructorJson = JSON.parse(File.open("./db/pa_rails_json/instructor.json").read
 courses = []
 instructors = []
 subjects = []
+course_subjects = []
 
 Course.delete_all
 Instructor.delete_all
@@ -25,6 +26,13 @@ courseJson.each do |course|
         name: course["name"],
         independent_study: course["independent_study"]
     )
+
+    course["subjects"].each do |subject|
+        course_subjects<<CourseSubject.new(
+            course_code: course["code"],
+            subject_id: subject["id"]
+        )
+    end
 end
 
 instructorJson.each do |instructor|
@@ -46,8 +54,11 @@ subjectJson.each do |subject|
     )
 end
 
+
+
 Course.import courses
 Instructor.import instructors
 Subject.import subjects
+CourseSubject.import course_subjects
 
 

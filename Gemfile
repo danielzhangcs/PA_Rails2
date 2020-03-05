@@ -12,6 +12,10 @@ gem 'activerecord-import'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'rails-controller-testing'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use postgresql as the database for Active Record
