@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   include SessionsHelper
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   skip_before_action :require_login, only: [:new, :create, :set_user, :user_params]
 
 
@@ -14,7 +15,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @courses = @user.courses
   end
 

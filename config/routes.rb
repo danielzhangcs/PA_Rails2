@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   delete '/drop', to: 'enrollments#delete_enrollment'
-  get 'search', to: 'static_pages#search'
+  get '/search', to: 'static_pages#search'
+
+  get '/index', to: 'static_pages#index'
 
   resources :users
   resources :subjects
   resources :instructors
   resources :courses
-  root 'static_pages#home'
+  root 'users#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
