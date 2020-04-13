@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "json"
+
 courseJson = JSON.parse(File.open("./db/pa_rails_json/course.json").read)
 subjectJson = JSON.parse(File.open("./db/pa_rails_json/subject.json").read)
 instructorJson = JSON.parse(File.open("./db/pa_rails_json/instructor.json").read)

@@ -20,4 +20,9 @@ class UserMailer < ApplicationMailer
 
     mail to: "to@example.org"
   end
+
+  def notification(email)
+    mail to: email, subject: "Notification"
+  end
+
 end
